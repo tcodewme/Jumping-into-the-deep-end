@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>JavaScript Assignment</title>
+</head>
+<body>
+    <header class="pageHeader" >
+        <nav class="navbar sticky-top navbar-light navbar-expand-lg navbar-light">
+            <div class="container-fluid ">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">              
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item" id="homePageBtn">
+                            <a class="nav-link" href="#homePage">Home</a>
+                        </li>
+                        <li class="nav-item" id="leapYrCheckerBtn">
+                            <a class="nav-link" href="#leapYearChecker"><span>Leap Year Checker</span></a>
+                        </li>
+                        <li class="nav-item" id="dDayCounterBtn">
+                            <a class="nav-link" href="#dDayCounter">D-day Counter</a>
+                        </li>
+                        <li class="nav-item" id="lotto649Btn">
+                            <a class="nav-link" href="#lotto649NumberGenerator">Lotto 649 Number Generator</a>
+                        </li>
+                        <li class="nav-item" id="heightWeightBtn">
+                            <a class="nav-link" href="#heightWeightConverter">Height/Weight Converter</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>    
+        </nav>         
+    </header>             
+    <br>
+    <div id="homePage">
+        <div class="container">
+            <div>
+                <p><h1>Welcome!</h1></p>   
+                <p><h2>Convert, Countdown, and Generate.</h2></p>         
+            </div>
+        </div>      
+    </div>             
+    <section id="leapYearChecker">
+        <br>
+        <div class="container">
+            <div id='eachSection'>
+                <h3> Leap Year Checker </h3>
+                <h5>Type the year you want to check below and click the submit button:</h5>
+                <br>
+                <form id="leapYrForm">
+                    <input type="number"  placeholder="YYYY" id="userYearInput" onkeydown="if(event.key==='.'){event.preventDefault();}" oninput="this.value = this.value.replace(/[^0-9]/g, '')" onKeyPress="if(this.value.length==4) return false;">
+                    <button type="button" onclick="Calculate();" id="submitButton">Submit</button>
+                    <div >
+                        <br>
+                        <p id="leapYrOutput"></p>
+                    </div>                                        
+                    <button type="button" id='refreshButton' onclick="resetYearChecker();">Refresh</button>                       
+                </form>
+            <br>
+            </div>
+        </div>      
+    </section>
+    <br>
+    <section id="dDayCounter"> 
+        <div class="container">
+            <div id='eachSection'>
+                <h3> D-day Counter</h3>
+                <h5>Type a future date below to count the number of days between today and the future date:</h5>
+                <br>
+                <form id="dateCounterForm">
+                    <input type="number"  placeholder="YYYYMMDD" id="userDateInput" oninput="this.value = this.value.replace(/[^0-9]/g, '')" onkeydown="if(event.key==='.'){event.preventDefault();}" onKeyPress="if(this.value.length==8) return false;" >
+                    <button type="button" onclick="Countdown();" id="dayCounterSubmitBtn">Submit</button>
+                    <div>
+                        <br>
+                        <p id="dayCounterOutput"></p>
+                    </div>
+                    <button type="button" id='dayCounterrefreshBtn' Onclick="resetDateCounter();">Refresh</button> 
+                </form>                   
+            <br>
+            </div>
+        </div>
+    </section>
+    <section id="lotto649NumberGenerator">
+        <div class="container">
+            <div id="eachSection">
+                <h3> Lotto 649 Generator </h3> 
+                <h5>Click the button to generate six random numbers</h5> 
+                <br>              
+                <button type="button" onclick="RandomNumber();">Generate Number</button>                
+                <div >
+                    <br>                
+                    <p id="randomNumberOutput" ></p>
+                </div>                        
+                <br>
+            </div>
+        </div>
+    </section>
+    <section id="heightWeightConverter">
+        <div class="container">
+            <div id='eachSection'>
+                <h3> Height/Weight Converter</h3>
+                <br>
+                <h5>Convert your height in centimeter to feet</h5> 
+                <form id="heightConverterForm">
+                    <div class="row">                    
+                        <input type="number"  placeholder="Height in centimeter " id="inputHeight" oninput="this.value = this.value.replace(/[^0-9.]/g,'')"> 
+                        <div class="col-1">
+                            <button type="button" onclick="ConvertHeight();" id="heightSubmitBtn">Convert</button>
+                        </div>
+                    </div>
+                    <div>
+                        <br>
+                        <p id="heightOutput"></p>
+                    </div>
+                    <button type="button" id='heightRefreshBtn' Onclick="resetHeightCounter();">Refresh</button> 
+                </form>
+                <br>
+                <h5>Convert your weight in kilogram to lbs</h5>
+                <form id="weightConverterForm">               
+                    <div class="row">
+                        <input type="number"  placeholder="Weight in kilogram " id="inputWeight" oninput="this.value = this.value.replace(/[^0-9.]/g,'')" >
+                        <div class="col-1">
+                            <button type="button" id='weightSubmitBtn' onclick="ConvertWeight();">Convert</button>
+                        </div>
+                    </div>
+                    <div> 
+                        <br>  
+                        <p id="weightOutput"></p>
+                    </div>
+                    <button type="button" id='weightRefreshBtn' Onclick="resetWeightCounter();">Refresh</button>
+                </form>                                      
+            <br>    
+            </div>
+        </div>
+    </section>
+    <br>  
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>        
+<script>$('.navbar-collapse a').click(function(){$(".navbar-collapse").collapse('hide');});</script>
+<script src="./script1.js"></script>
+<script src="./script2.js"></script>      
+</body>
+</html>

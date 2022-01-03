@@ -1,0 +1,91 @@
+body{
+    background-color:rgba(202, 213, 236, 0.959);
+    font-family: 'helvetica','sans-serif';
+}
+
+button{
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.button-active{
+    background-color: rgba(16, 83, 230, 0.959);;
+}
+
+#eachSection{
+    max-width: 100%;
+    padding: 20px 50px;
+    height: 100%;
+    margin-top: 60px;
+    background-color:#f1f1f1;
+}
+
+#heightWeightConverter{
+    margin-bottom:60px;
+}
+
+#homePage{
+    height: 100%;
+    margin: 100px;
+    text-align: center;
+}
+
+h1{
+    font-size:80px;
+    font-weight:bold;
+    text-align:center;
+}
+
+h2{
+    font-size:50px;
+    font-weight:bold;
+    text-align:center;
+}
+
+h3{
+    text-align: center;
+    padding-top: 20px;
+    font-weight:bold;
+}
+
+#inputHeight, #inputWeight{
+    margin-left: 15px;
+}
+
+P{
+    font-weight: bold;
+}
+
+.pageHeader{    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 160px;
+    background-color:rgba(16, 83, 230, 0.959);
+}
+
+#randomNumberOutput{
+    word-spacing: 2rem;
+}
+.pageHeader a{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(23, 24, 24);
+    margin: 10px;
+    padding: 10px 10px;
+}
+
+#refreshButton, #dayCounterrefreshBtn, #heightRefreshBtn,#weightRefreshBtn{
+    font-size:10px;
+    display: none; 
+    visibility: visible;
+}
+
+section{
+    display: none; 
+    visibility: visible;
+}
+
+
+
+
